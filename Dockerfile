@@ -47,9 +47,6 @@ RUN \
   curl -o \
     /config/qbit/qbittorrent.conf -L \
     "https://raw.githubusercontent.com/knightcrawler-stremio/knightcrawler/main/deployment/docker/config/qbit/qbittorrent.conf" && \
-  rm -rf \
-    /root/.cache \
-    /tmp/*
   echo "**** cleanup ****" && \
   rm -rf \
     /root/.cache \
