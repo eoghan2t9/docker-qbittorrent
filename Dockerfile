@@ -43,6 +43,8 @@ RUN \
   tar xf \
     /tmp/qbt.tar.gz -C \
     /qbt && \
+  echo "**** Download KC Config ****" && \
+ADD https://raw.githubusercontent.com/knightcrawler-stremio/knightcrawler/main/deployment/docker/config/qbit/qbittorrent.conf /config/qBittorrent/  
   echo "**** cleanup ****" && \
   rm -rf \
     /root/.cache \
