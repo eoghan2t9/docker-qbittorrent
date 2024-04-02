@@ -43,10 +43,6 @@ RUN \
   tar xf \
     /tmp/qbt.tar.gz -C \
     /qbt && \
-  echo "**** Add KnightCrawler Config ****" && \
-  curl -o \
-    /config/qbit/qbittorrent.conf -L \
-    "https://raw.githubusercontent.com/knightcrawler-stremio/knightcrawler/main/deployment/docker/config/qbit/qbittorrent.conf" && \
   echo "**** cleanup ****" && \
   rm -rf \
     /root/.cache \
@@ -58,7 +54,7 @@ COPY root/ /
 # add unrar
 COPY --from=unrar /usr/bin/unrar-alpine /usr/bin/unrar
 
-# ports and volumes
+# ports and volumes
 EXPOSE 8080 6881 6881/udp
 
 VOLUME /config
