@@ -42,9 +42,7 @@ RUN \
     "https://github.com/fedarovich/qbittorrent-cli/releases/download/${QBT_CLI_VERSION}/qbt-linux-alpine-x64-${QBT_CLI_VERSION#v}.tar.gz" && \
   tar xf \
     /tmp/qbt.tar.gz -C \
-    /qbt && \
-  echo "**** Download KC Config ****" && \
-ADD https://raw.githubusercontent.com/knightcrawler-stremio/knightcrawler/main/deployment/docker/config/qbit/qbittorrent.conf /config/qBittorrent/  
+    /qbt && \ 
   echo "**** cleanup ****" && \
   rm -rf \
     /root/.cache \
@@ -60,3 +58,4 @@ COPY --from=unrar /usr/bin/unrar-alpine /usr/bin/unrar
 EXPOSE 8080 6881 6881/udp
 
 VOLUME /config
+ADD https://raw.githubusercontent.com/knightcrawler-stremio/knightcrawler/main/deployment/docker/config/qbit/qbittorrent.conf /config/qBittorrent/
